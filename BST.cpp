@@ -116,66 +116,6 @@ bool BST<T>::insert(const T& data, int key){
         return this->root->left.insert(data, key);
     }
 }
-/*
-template <typename T>
-T& BST<T>::remove(int key){
-   
-    // 
-    if(this->root->key == key){
-        // case 1: a leaf and no child
-        if(this->root->left.is_empty() && this->root->right.is_empty()){
-            T* temp = &(this->root->data);
-            delete this->root;
-            return *temp;
-        }
-        // case 2: single child
-        BST<double>* left_child = this->root->left;
-        BST<double>* right_child = this->root->right; 
-
-        // contain right child only
-        if(left_child->is_empty() && (right_child->is_empty() == false)){
-            T* temp = &(this->root->data);
-            this->root->data = right_child->root->data;
-            this->root->key = right_child->root->key;
-            this->root->left = right_child->root->left;
-            this->root->right = right_child->root->right;
-            delete right_child->root;
-            return *temp;
-        }
-        // contain left child only
-        else if((left_child->is_empty() == false) && right_child->is_empty())
-        {
-            T* temp = &(this->root->data);
-            this->root->data = left_child->root->data;
-            this->root->key = left_child->root->key;
-            this->root->left = left_child->root->left;
-            this->root->right = left_child->root->right;
-            delete left_child->root;
-            return *temp;
-        }
-        // contain two childs, find a smallest node in right subtree and replace to removed node
-        else if(left_child->is_empty() == right_child->is_empty() == true){
-            T* temp = &(this->root->data);
-            BSTnode* min_node = find_min(); // it never be a nullptr
-            this->root->data = min_node->data;
-            this->root->key = min_node->key;
-            this->root->left = min_node->left;
-            this->root->right = min_node->right;
-            delete min_node;
-            return *temp;
-        }
-
-        // recursive case
-        if(this->key < key){
-            return this->root->right.remove(key);
-        }
-        else
-        {
-            return this->root->left.remove(key);
-        }
-    }
-}
-*/
 
 template <typename T>
 bool BST<T>::remove(int key){
