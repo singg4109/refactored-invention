@@ -1,2 +1,3 @@
 # refactored-invention
-Turn the things I had learnt and develop to my style on it
+Write codes with my style than I had learnt from other sites or lecture.
+Example: Data structure with template
